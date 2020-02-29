@@ -24,7 +24,8 @@ test("Stack clean", () => {
     stack.push(2)
     stack.push(3)
     stack.clear()
-    expect(stack.size()).toBe(0)
+    stack.push(5)
+    expect(stack.size()).toBe(1)
 })
 
 test("Overflow", () => {
@@ -36,4 +37,12 @@ test("Overflow", () => {
     expect(() => {
         stack.push(6);
     }).toThrowError("Overflow")
+})
+
+test("Underflow", () => {
+    stack.push(5)
+    stack.pop()
+    expect(() => {
+        stack.pop()
+    }).toThrowError("Underflow")
 })
