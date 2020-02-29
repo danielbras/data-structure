@@ -1,6 +1,6 @@
 class Fila {
 	constructor(size = 10) {
-		this.dados = [];
+		this.data = [];
 		this.fim = 0;
 		this.inicio = 0;
 		this.maxSize = size;
@@ -10,7 +10,7 @@ class Fila {
 		if (this.isFull()) {
 			throw new Error("Queue is full");
 		} else {
-			this.dados[this.fim++] = newData;
+			this.data[this.fim++] = newData;
 		}
 	}
 
@@ -18,7 +18,7 @@ class Fila {
 		if (this.isEmpty()) {
 			throw new Error("Queue is empty");
 		} else {
-			return this.dados[this.inicio++];
+			return this.data[this.inicio++];
 		}
 	}
 
@@ -26,7 +26,7 @@ class Fila {
 		if (this.isEmpty()) {
 			throw new Error("Queue is empty");
 		} else {
-			return this.dados[this.inicio];
+			return this.data[this.inicio];
 		}
 	}
 
