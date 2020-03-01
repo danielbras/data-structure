@@ -40,8 +40,6 @@ test("Overflow", () => {
 })
 
 test("Underflow", () => {
-    stack.push(5)
-    stack.pop()
     expect(() => {
         stack.pop()
     }).toThrowError("Underflow")

@@ -1,4 +1,11 @@
-class Fila {
+/**
+ * 
+ */
+export default class Fila {
+	/**
+	 * 
+	 * @param {number} size - 
+	 */
 	constructor(size = 10) {
 		this.data = [];
 		this.fim = 0;
@@ -50,5 +57,3 @@ class Fila {
 		return (this.fim - this.inicio) === this.maxSize
 	}
 }
-
-export default Fila;
