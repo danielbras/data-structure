@@ -44,3 +44,14 @@ test("Underflow", () => {
         stack.pop()
     }).toThrowError("Underflow")
 })
+
+test("Peek", () => {
+    expect(() => {
+        stack.peek()
+    }).toThrowError("Stack is empty")
+    stack.push(0)
+    stack.push(1)
+    stack.push(2)
+    expect(stack.peek()).toBe(2)
+
+})
