@@ -1,8 +1,3 @@
-/**
- * Implementação de uma pilha
- * @author {https://github.com/danielbras}
- */
-
 export default class Pilha {
   /**
    * Construtor da classe
@@ -53,18 +48,15 @@ export default class Pilha {
   }
 
   /**
-   * Remove todos os elementos da Pilha de forma lógica.
-   */
-  clear() {
-    this.top = -1;
-  }
-
-  /**
    * Retorna o tamanho da Pilha.
    * @returns {number} - Tamanho da Pilha.
    */
   size() {
     return this.top + 1;
+  }
+
+  clear() {
+    this.top = -1;
   }
 
   /**
@@ -89,10 +81,37 @@ export default class Pilha {
    */
   print() {
     let result = "[";
-
-    for (let i = 0; i <= this.top; i++) {
-      result += ` ${this.data[i]} `;
+    let lastElement;
+    for (let i = 0; i < this.top; i++) {
+      result += ` ${this.data[i]},`;
+      lastElement = this.data[i + 1];
     }
-    return (result += "]");
+    return (result += ` ${lastElement} ]`);
+  }
+
+  /**
+   * Retorna todos os elemento da pilha com
+   * @returns {string} - Pilha com o topo e base invertidos
+   */
+  change() {
+    if (this.isEmpty()) {
+      throw new Error("Stack is empty");
+    }
+    let end = new Pilha(this.maxSize);
+    let auxiliary = new Pilha(this.maxSize);
+
+    console.log(this.print());
+
+    end.push(this.pop());
+    while (this.maxSize != this.top + this.maxSize) {
+      auxiliary.push(this.pop());
+    }
+    while (auxiliary.maxSize != auxiliary.top + auxiliary.maxSize + 1) {
+      end.push(auxiliary.pop());
+    }
+    end.push(this.pop());
+
+    console.log(end.print());
+    return end;
   }
 }

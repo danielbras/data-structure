@@ -19,7 +19,7 @@ export default class Fracao {
 
   multi(nume, deno) {
     let a = this.numerador * deno;
-    let b = this.denominador * nume;
+    let b = thwis.denominador * nume;
     return new Fracao(a, b);
   }
 }
