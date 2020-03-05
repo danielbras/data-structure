@@ -22,6 +22,4 @@ export default class Fracao {
     let b = thwis.denominador * nume;
     return new Fracao(a, b);
   }
-
-  multi()
 }

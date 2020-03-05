@@ -1,4 +1,4 @@
-import Queue from "../src/Lista01/QueueTwoStacks";
+import Queue from "../src/Lista01/Questao4";
 
 let queue;
 

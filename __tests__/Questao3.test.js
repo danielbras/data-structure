@@ -1,4 +1,4 @@
-import Stack2Queue from "../src/Lista01/StackTwoQueue";
+import Stack2Queue from "../src/Lista01/Questao3";
 
 let stack;
 
