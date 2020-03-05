@@ -64,7 +64,7 @@ test("Teste de size após o clear", () => {
   expect(f.size()).toBe(0);
 });
 
-test("fila aula", () => {
+test("Exemplo de teste da fila", () => {
   expect(f.size()).toBe(0);
   f.enqueue("A");
   expect(f.size()).toBe(1);

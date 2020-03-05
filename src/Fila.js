@@ -1,10 +1,7 @@
-/**
- *
- */
 export default class Fila {
   /**
    *
-   * @param {number} size -
+   * @param {number} size
    */
   constructor(size = 10) {
     this.data = [];
@@ -38,10 +35,17 @@ export default class Fila {
   }
 
   clear() {
-    this.inicio = this.fim;
+    this.inicio = this.fim = 0;
   }
 
-  toString() {}
+  toString() {
+    let result = "[";
+    for (let i = this.inicio; i < this.fim; i++) {
+      result += ` ${this.data[i]},`;
+    }
+    result += ` ${this.data[this.inicio]} ]`;
+    return result;
+  }
 
   size() {
     return this.fim - this.inicio;

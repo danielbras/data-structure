@@ -2,7 +2,6 @@
  * Implementação de uma pilha
  * @author {https://github.com/danielbras}
  */
-
 export default class Pilha {
   /**
    * Construtor da classe
