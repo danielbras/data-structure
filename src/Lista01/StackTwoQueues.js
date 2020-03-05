@@ -40,6 +40,10 @@ export default class Stack2 {
     }
   }
 
+  clear() {
+    this.queueA.clear();
+    this.top = -1;
+  }
   size() {
     return this.top;
   }
