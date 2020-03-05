@@ -1,7 +1,7 @@
 export default class Fracao {
   constructor(nume, deno) {
     if (deno == 0) {
-      throw new Error("O denomidador não pode ser zero");
+      throw new Error("The denominator cannot be zero");
     }
     this.numerador = nume;
     this.denominador = deno;

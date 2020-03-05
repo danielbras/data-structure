@@ -1,24 +1,24 @@
-import Fracao from "../src/Lista01/Fracao";
+import Fraction from "../src/Lista01/Fracao";
 
-let fracao;
-let fracao2;
+let frac1;
+let frac2;
 
 beforeEach(() => {
-  fracao = new Fracao(1, 2);
-  fracao2 = new Fracao(2, 2);
+  frac1 = new Fraction(1, 2);
+  frac2 = new Fraction(2, 2);
 });
 
-test("Divisao: ", () => {
+test("Fraction division", () => {
   expect(fracao.divisao(fracao2).toString()).toBe("2/4");
 });
 
-test("Multiplicacao: ", () => {
+test("Fraction multiplication", () => {
   expect(fracao.divisao(fracao2).toString()).toBe("2/4");
 });
 
-test("Divisao por zero", () => {
+test("Division for zero", () => {
   expect(() => {
     let f = new Fracao(4, 0);
     fracao.divisao(f);
-  }).toThrowError("O denomidador não pode ser zero");
+  }).toThrowError("The denominator cannot be zero");
 });

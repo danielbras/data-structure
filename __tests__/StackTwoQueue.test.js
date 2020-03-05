@@ -23,7 +23,7 @@ test("Underflow", () => {
   }).toThrowError("Stack underflow");
 });
 
-test("operation of stack with two queue", () => {
+test("operation of stack with two queues", () => {
   stack.push(1);
   expect(stack.peek()).toBe(1);
   stack.push(2);

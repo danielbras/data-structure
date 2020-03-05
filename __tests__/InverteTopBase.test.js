@@ -1,22 +1,22 @@
 import Stack from "../src/Lista01/InverteTopBase";
 
-let pilha;
+let stack;
 
 beforeEach(() => {
-  pilha = new Stack(5);
+  stack = new Stack(5);
 });
 
-test("Troca o elemento do topo com a basa", () => {
-  pilha.push(1);
-  pilha.push(2);
-  pilha.push(3);
-  pilha.push(4);
-  pilha.push(5);
-  expect(pilha.change().print()).toBe("[ 5, 2, 3, 4, 1 ]");
+test("Change the element of top with the base", () => {
+  stack.push(1);
+  stack.push(2);
+  stack.push(3);
+  stack.push(4);
+  stack.push(5);
+  expect(stack.change().print()).toBe("[ 5, 2, 3, 4, 1 ]");
 });
 
-test("Tenta trocar o top e a base de uma pilha vazia", () => {
+test("Try to change the top and base of an empty stack", () => {
   expect(() => {
-    pilha.change();
+    stack.change();
   }).toThrowError("Stack is empty");
 });

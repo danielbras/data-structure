@@ -38,12 +38,14 @@ export default class Fila {
     this.inicio = this.fim = 0;
   }
 
+  // Formato da string - [ 1, 2, 3 ]
   toString() {
     let result = "[";
     for (let i = this.inicio; i < this.fim; i++) {
       result += ` ${this.data[i]},`;
+      lastElement = this.data[i + 1];
     }
-    result += ` ${this.data[this.inicio]} ]`;
+    result += ` ${lastElement} ]`;
     return result;
   }
 

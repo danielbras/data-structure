@@ -43,4 +43,8 @@ export default class Stack2 {
   size() {
     return this.top;
   }
+
+  print() {
+    return this.queueA.toString();
+  }
 }
