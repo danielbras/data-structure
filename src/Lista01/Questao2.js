@@ -5,6 +5,9 @@ export default class ReverseTopBase {
     this.maxSize = size;
     this.data = [];
     this.top = -1;
+
+    // this.aux = new Pilha(this.maxSize);
+    // this.output = new Pilha(this.maxSize);
   }
 
   push(newData) {
@@ -22,6 +25,7 @@ export default class ReverseTopBase {
       return this.data[this.top--];
     }
   }
+  
   reverseTopBase() {
     let aux = new Pilha(this.maxSize);
     let output = new Pilha(this.maxSize);
@@ -53,15 +57,12 @@ export default class ReverseTopBase {
   }
 
   print() {
-    let result = "[";
-    let lastElement;
+    let result = "[ ";
     for (let i = 0; i < this.top; i++) {
-      result += `${this.data[i]} `;
-      if (i + 1 !== undefined) {
-        lastElement = this.data[i + 1];
-      }
+      result += `${this.data[i]}`;
     }
-    return result += `${lastElement}]`;
+    result += " ]"
+    return result;
   }
 
   size() {
