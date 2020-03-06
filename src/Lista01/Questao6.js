@@ -38,7 +38,8 @@ export default class Deque {
 
         while (!this.queueAux.isEmpty()) {
             this.deque.enqueue(this.queueAux.dequeue())
-        }        
+        }
+                
     }
 
     toString(){
