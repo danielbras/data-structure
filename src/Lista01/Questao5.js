@@ -1,7 +1,7 @@
 import Pilha from "../Stack"
 
 export default class DecToBin {
-    constructor(size){
+    constructor(size = 8){
         this.maxSize = size;
         this.data = [];
         this.top = -1;
@@ -9,7 +9,11 @@ export default class DecToBin {
     }
 
     push(newData) {
-       this.data[++this.top] = newData;
+        if (this.isFull()) {
+          throw new Error("Overflow");
+        } else {
+          this.data[++this.top] = newData;
+        }
     }
 
     pop() {
@@ -56,5 +60,10 @@ export default class DecToBin {
 
     isEmpty() {
         return this.size() === 0;
-    }  
+    }
+
+    isFull() {
+        return this.size() === this.maxSize;
+    }
+    
 }

@@ -1,9 +1,9 @@
-import Queue from "../src/Lista01/Questao4";
+import Queue2Stack from "../src/Lista01/Questao4";
 
 let queue;
 
 beforeEach(() => {
-  queue = new Queue(5);
+  queue = new Queue2Stack(5);
 });
 
 test("Queue full", () => {
