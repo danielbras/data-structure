@@ -11,7 +11,7 @@ export default class Pilha {
 
     pop() {
         if (this.isEmpty()) {
-            throw new Error();
+            throw new Error("Underflow");
         }
         let dado = this.lastData();
         this.list.removeEnd();
@@ -19,26 +19,34 @@ export default class Pilha {
     }
 
     peek() {
+        if (this.isEmpty()) {
+            throw new Error("Stack is empty");
+        }
         return this.lastData();
     }
 
     size() {
-        this.list.size();
+        return this.list.size();
     }
 
     isEmpty() {
-        this.list.isEmpty();
+        return this.list.isEmpty();
     }
 
     print() {
-        this.list.toString();
+        return this.list.toString();
     }
 
+    clear() {
+        this.list = new Lista();
+    }
+
+    // Função extra para reutilizar código
     lastData() {
         let anterior = this.list.head;
         let atual = this.list.head.proximo;
 
-        while (atual.proximo !== null) {
+        while (atual !== null) {
             anterior = atual;
             atual = atual.proximo;
         }

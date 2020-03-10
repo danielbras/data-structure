@@ -17,13 +17,13 @@ test("Adicionar um elemento", () => {
 });
 
 test("Teste de overflow", () => {
-  f.enqueue(5);
-  f.enqueue(5);
-  f.enqueue(5);
-  f.enqueue(5);
-  f.enqueue(5);
+  f.enqueue(1);
+  f.enqueue(2);
+  f.enqueue(3);
+  f.enqueue(50);
+  f.enqueue(55);
   expect(() => {
-    f.enqueue(5);
+    f.enqueue(59);
   }).toThrowError("Queue is full");
 });
 
