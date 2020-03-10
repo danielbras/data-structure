@@ -1,4 +1,4 @@
-import Fraction from "../src/Lista01/Questao1";
+import Fraction from "../src/Lista_1/Questao1";
 
 let frac1;
 let frac2;
@@ -13,7 +13,7 @@ test("Fraction division", () => {
 });
 
 test("Fraction multiplication", () => {
-  expect(frac1.divisao(frac2).toString()).toBe("2/4");
+  expect(frac1.multi(frac2).toString()).toBe("2/4");
 });
 
 test("Division for zero", () => {

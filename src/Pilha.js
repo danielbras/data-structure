@@ -1,63 +1,61 @@
 /**
- * Implementação de uma Pilha
- * @author {https://github.com/taniro}
+ * Implementação de uma pilha
+ * @author {https://github.com/danielbras}
  */
-
-class Pilha {
+export default class Pilha {
   /**
-   * Construtor padrão da classe Pilha.
-   * @param {number} [size = 10] - Tamanho da Pilha. Caso não informado a Pilha terá tamanho 10.
+   * Construtor da classe
+   * @param {number} [size = 5]  = Tamanho da pilha. Caso não informado a Pilha terá tamanho 5.
    */
-  constructor(size = 10) {
+  constructor(size = 5) {
     this.maxSize = size;
-    this.dados = [];
-    this.topo = -1;
+    this.data = [];
+    this.top = -1;
   }
 
   /**
    * Adiciona um elemento na Pilha.
-   * @param {any} newData - Elemento a ser adicionado à Pilha.
-   * @throws {Error} - Lança um erro de Overflow caso a pilha esteja cheia.
+   * @param {number} newData - Elemento a ser adicionado á Pilha.
+   * @throws {Error} - Lança um erro caso a pilha esteja cheia.
    */
   push(newData) {
     if (this.isFull()) {
       throw new Error("Overflow");
     } else {
-      this.dados[++this.topo] = newData;
+      this.data[++this.top] = newData;
     }
   }
 
   /**
    * Remove um elemento da Pilha.
    * @returns {any} - Retorna o elemento removido da Pilha.
-   * @throws {Error} - Lança um erro de Underflow caso a pilha esteja vazia.
+   * @throws {Error} - Lança um erro de Underflow se a pilha esteja vazia.
    */
   pop() {
     if (this.isEmpty()) {
       throw new Error("Underflow");
     } else {
-      return this.dados[this.topo--];
+      return this.data[this.top--];
     }
   }
 
   /**
    * Retorna o elemento no topo da Pilha sem remover.
-   * @returns {any} - Elemento do topo da Pilha.
-   * @throws {Error} - Lança um erro de Underflow caso a pilha esteja vazia.
+   * @returns {any} - Elemento do topo da Pilha
+   * @throws {Error} - Lança um erro de Underflow caso a Pilha esteja vazia.
    */
-  top() {
+  peek() {
     if (this.isEmpty()) {
-      throw new Error("Empty");
-    } else {
-      return this.dados[this.topo];
+      throw new Error("Stack is empty");
     }
+    return this.data[this.top];
   }
 
   /**
-   * Remove todos os elementos da Pilha.
+   * Remove todos os elementos da Pilha de forma lógica.
    */
   clear() {
-    this.topo = -1;
+    this.top = -1;
   }
 
   /**
@@ -65,11 +63,11 @@ class Pilha {
    * @returns {number} - Tamanho da Pilha.
    */
   size() {
-    return this.topo + 1;
+    return this.top + 1;
   }
 
   /**
-   * Verifica que uma Pilha é vazia.
+   * Verifica se uma Pilha está vazia.
    * @returns {boolean} - Retorna [true] se a Pilha estiver vazia, [false] caso contrário.
    */
   isEmpty() {
@@ -77,25 +75,23 @@ class Pilha {
   }
 
   /**
-   * Verifica que uma Pilha é cheia.
-   * @returns {boolean} - Retorna [true] se a Pilha estiver cheia, [false] caso contrário.
+   * Verifica se uma Pilha está cheia.
+   * @returns {boolean} - Retorna [true] se a Pilha estiver cheia, ou [false] caso contrário.
    */
   isFull() {
     return this.size() === this.maxSize;
   }
 
   /**
-   * Retorna uma string contendo todos os elementos da Pilha.
-   * @returns {string} - Conteúdo da Pilha formatado.
+   * Retorna todos os elementos da pilha em uma string.
+   * @returns {string} - Conteúdo da pilha formatado.
    */
-  toString() {
+  print() {
     let result = "[";
-    for (let i = 0; i <= this.topo; i++) {
-      result += ` ${this.dados[i]} `;
+
+    for (let i = 0; i <= this.top; i++) {
+      result += ` ${this.data[i]} `;
     }
-    result += "]";
-    return result;
+    return (result += "]");
   }
 }
-
-export default Pilha;

@@ -35,7 +35,7 @@ class Lista {
     let atual = this.head.proximo;
     if (atual === null) {
       return;
-    } else {
+    } else {  
       this.head.proximo = atual.proximo;
     }
   }
