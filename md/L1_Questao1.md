@@ -1,3 +1,4 @@
+```
 import Fracao from "../src/Lista_1/Questao1";
 
 let frac1;
@@ -22,3 +23,4 @@ test("Division for zero", () => {
     frac1.divisao(fracao);
   }).toThrowError("O denominador não pode ser zero");
 });
+```
