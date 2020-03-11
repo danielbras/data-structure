@@ -88,7 +88,7 @@ class List {
       //adicionando no final
       this.append(data);
     } else {
-      if (posicao <= 0) {
+      if (index <= 0) {
         //adicionando no inicio
         this.add(data);
       } else {
@@ -98,7 +98,7 @@ class List {
         let previous = this.head;
         let current = this.head.next;
 
-        while (i != posicao) {
+        while (i != index) {
           //iteração
           previous = current;
           current = current.next;
