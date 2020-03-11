@@ -1,12 +1,12 @@
-import Stack2Queue from "../src/Lista_1/Questao3";
+import Pilha2Filas from "../src/Lista_1/Questao3";
 
 let pilha;
 
 beforeEach(() => {
-  pilha = new Stack2Queue(5);
+  pilha = new Pilha2Filas(5);
 });
 
-test("Overflow", () => {
+test("Estouro de pilha", () => {
   pilha.push(1);
   pilha.push(2);
   pilha.push(3);
@@ -17,7 +17,7 @@ test("Overflow", () => {
   }).toThrowError("Stack overflow");
 });
 
-test("Underflow", () => {
+test("", () => {
   expect(() => {
     pilha.pop();
   }).toThrowError("Stack underflow");

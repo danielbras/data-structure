@@ -1,36 +1,37 @@
-import Lista from "../Lista";
+import List from "../Lista";
 
-export default function inverterOrdem(lista) {
-    if(lista.isEmpty()){
+export default function inverterOrder(list) {
+    if(list.isEmpty()){
         throw new Error("List is empty");
     }
-    let listaAux = new Lista();
-    let anterior, atual;
+    
+    let auxList = new List();
+    let previous, current;
 
-    while (!lista.isEmpty()) {
-        anterior = lista.head;
-        atual = lista.head.proximo;
+    while (!list.isEmpty()) {
+        previous = list.head;
+        current = list.head.proximo;
 
-        while (atual !== null) {
-            anterior = atual;
-            atual = atual.proximo;
+        while (current !== null) {
+            previous = current;
+            current = current.proximo;
         }
-        listaAux.append(anterior.dado);
-        lista.removeEnd();
+        auxList.append(previous.data);
+        list.removeEnd();
     }
 
-    // Preencher lista principal com os elementos em outra ordem
-    while (!listaAux.isEmpty()) {
-        anterior = listaAux.head;
-        atual = listaAux.head.proximo;
+    // Preencher list principal com os elementos em outra ordem
+    while (!auxList.isEmpty()) {
+        previous = auxList.head;
+        current = auxList.head.proximo;
 
-        while (atual !== null) {
-            anterior = atual;
-            atual = atual.proximo;
+        while (current !== null) {
+            previous = current;
+            current = current.proximo;
         }
-        lista.add(anterior.dado);
-        listaAux.removeEnd();
+        list.add(previous.data);
+        auxList.removeEnd();
     }
     
-    return lista;
+    return list;
 }

@@ -1,160 +1,160 @@
 class Node {
-  constructor(dado) {
-    this.dado = dado;
-    this.proximo = null;
+  constructor(data) {
+    this.data = data;
+    this.next = null;
   }
 }
 
-class Lista {
+class List {
   constructor() {
     this.head = new Node(null);
   }
 
-  add(dado) {
-    let novo_no = new Node(dado);
+  add(data) {
+    let newNode = new Node(data);
 
-    novo_no.proximo = this.head.proximo;
-    this.head.proximo = novo_no;
+    newNode.next = this.head.next;
+    this.head.next = newNode;
   }
 
-  append(dado) {
-    let novo_no = new Node(dado);
+  append(data) {
+    let newNode = new Node(data);
 
-    if (this.head.proximo == null) {
-      this.head.proximo = novo_no;
+    if (this.head.next == null) {
+      this.head.next = newNode;
     } else {
-      let atual = this.head.proximo;
-      while (atual.proximo != null) {
-        atual = atual.proximo;
+      let current = this.head.next;
+      while (current.next != null) {
+        current = current.next;
       }
-      atual.proximo = novo_no;
+      current.next = newNode;
     }
   }
 
   removeBeginning() {
-    let atual = this.head.proximo;
-    if (atual === null) {
+    let current = this.head.next;
+    if (current === null) {
       return;
     } else {  
-      this.head.proximo = atual.proximo;
+      this.head.next = current.next;
     }
   }
 
   removeEnd() {
-    let anterior = this.head;
-    let atual = this.head.proximo;
+    let previous = this.head;
+    let current = this.head.next;
 
-    if (atual == null) {
+    if (current == null) {
       return;
     }
 
-    while (atual.proximo != null) {
-      anterior = atual;
-      atual = atual.proximo;
+    while (current.next != null) {
+      previous = current;
+      current = current.next;
     }
-    atual = null;
-    anterior.proximo = null;
+    current = null;
+    previous.next = null;
   }
 
   isEmpty() {
-    return this.head.proximo === null;
+    return this.head.next === null;
   }
 
   toString() {
-    let atual = this.head.proximo;
-    let texto = "";
+    let current = this.head.next;
+    let string = "";
 
-    while (atual != null) {
-      texto += atual.dado + (atual.proximo ? "->" : "");
-      atual = atual.proximo;
+    while (current != null) {
+      string += current.data + (current.next ? "->" : "");
+      current = current.next;
     }
 
-    return texto;
+    return string;
   }
 
   size() {
-    let cont = 0;
-    let atual = this.head.proximo;
+    let count = 0;
+    let current = this.head.next;
 
-    while (atual != null) {
-      atual = atual.proximo;
-      cont++;
+    while (current != null) {
+      current = current.next;
+      count++;
     }
-    return cont;
+    return count;
   }
 
-  addAt(posicao, dado) {
-    if (posicao >= this.size()) {
+  addAt(index, data) {
+    if (index >= this.size()) {
       //adicionando no final
-      this.append(dado);
+      this.append(data);
     } else {
       if (posicao <= 0) {
         //adicionando no inicio
-        this.add(dado);
+        this.add(data);
       } else {
-        let novo_no = new Node(dado);
+        let newNode = new Node(data);
         let i = 0;
 
-        let anterior = this.head;
-        let atual = this.head.proximo;
+        let previous = this.head;
+        let current = this.head.next;
 
         while (i != posicao) {
           //iteração
-          anterior = atual;
-          atual = atual.proximo;
+          previous = current;
+          current = current.next;
           i++;
         }
-        anterior.proximo = novo_no;
-        novo_no.proximo = atual;
+        previous.next = newNode;
+        newNode.next = current;
       }
     }
   }
 
-  search(dado) {
-    if (this.head.proximo == null) {
+  search(data) {
+    if (this.head.next == null) {
       return false;
     } else {
-      let atual = this.head.proximo;
-      while (atual != null) {
-        if (atual.dado == dado) {
+      let current = this.head.next;
+      while (current != null) {
+        if (current.data == data) {
           return true;
         }
         //iteração
-        atual = atual.proximo;
+        current = current.next;
       }
       return false;
     }
   }
 
-  addInOrder(dado) {
+  addInOrder(data) {
     //NOTA: Essa função deve ser usada apenas se os elementos já existentes
     //na lista estiverem em ordem crescente.
 
-    let novo_no = new Node(dado);
+    let newNode = new Node(data);
 
-    if (this.head.proximo == null) {
-      this.head.proximo = novo_no;
+    if (this.head.next == null) {
+      this.head.next = newNode ;
     } else {
-      let anterior = this.head;
-      let atual = this.head.proximo;
+      let previous = this.head;
+      let current = this.head.next;
 
-      while (atual != null) {
-        if (atual.dado > dado) {
-          anterior.proximo = novo_no;
-          novo_no.proximo = atual;
+      while (current != null) {
+        if (current.data > data) {
+          previous.next = newNode;
+          newNode.next = current;
           return;
         }
         //iteração
-        anterior = atual;
-        atual = atual.proximo;
+        previous = current;
+        current = current.next;
       }
 
       //caso o if nunca seja true
-      anterior.proximo = novo_no;
-      novo_no.proximo = null;
+      previous.next = newNode;
+      newNode.next = null;
       return;
     }
   }
 }
 
-export default Lista;
+export default List;

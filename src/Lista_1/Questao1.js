@@ -1,8 +1,8 @@
 
 export default class Fracao {
   constructor(numerador, denominador) {
-    if (deno === 0) {
-      throw new Error("The denominator cannot be zero");
+    if (denominador === 0) {
+      throw new Error("O denominador não pode ser zero");
     }
     this.numerador = numerador;
     this.denominador = denominador;
@@ -12,7 +12,7 @@ export default class Fracao {
     return new Fracao(this.numerador * fracao.numerador, this.denominador * fracao.denominador);
   }
   
-  multi(fracao) {
+  multiplicacao(fracao) {
     return new Fracao(this.numerador * fracao.denominador, this.denominador * fracao.numerador);
   }
 

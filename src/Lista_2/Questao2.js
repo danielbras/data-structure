@@ -1,24 +1,24 @@
-import Lista from "../Lista";
+import List from "../Lista";
 
-export default class Fila {
+export default class Queue {
     constructor() {
-        this.list = new Lista();
+        this.list = new List();
     }
 
-    enqueue(dado) {
-        this.list.append(dado);
+    enqueue(data) {
+        this.list.append(data);
     }
 
     dequeue() {
         if(this.isEmpty()) throw new Error("The queue is empty");
-        let data = this.list.head.proximo.dado;
+        let data = this.list.head.next.data;
         this.list.removeBeginning();
         return data;
     }
 
     front() {
         if(this.isEmpty()) throw new Error("The queue is empty");
-        return this.list.head.proximo.dado;
+        return this.list.head.next.data;
     }
 
     isEmpty() {

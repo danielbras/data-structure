@@ -1,58 +1,58 @@
-import Fila from "../src/Lista_2/Questao2";
+import Queue from "../src/Lista_2/Questao2"
 
-let fila;
+let queue;
 
-beforeEach(() => fila = new Fila());
+beforeEach(() => queue = new Queue());
 
 test("Append data in queue", () => {
-    fila.enqueue(10);
-    expect(fila.size()).toBe(1);
-    fila.enqueue(45);
-    expect(fila.front()).toBe(10);
-    fila.enqueue(20);
-    fila.enqueue(40);
-    fila.enqueue(220);
-    expect(fila.size()).toBe(5);
+    queue.enqueue(10);
+    expect(queue.size()).toBe(1);
+    queue.enqueue(45);
+    expect(queue.front()).toBe(10);
+    queue.enqueue(20);
+    queue.enqueue(40);
+    queue.enqueue(220);
+    expect(queue.size()).toBe(5);
 });
 
 test("Queue is empty", () => {
     expect(() => {
-        fila.dequeue();
+        queue.dequeue();
     }).toThrowError("The queue is empty");
-    fila.enqueue(100);
-    fila.enqueue(75);
-    fila.enqueue(50);
-    fila.enqueue(25);
-    fila.enqueue(5);
-    expect(fila.size()).toBe(5);
-    fila.clear();
-    expect(fila.size()).toBe(0);
-    fila.enqueue(0);
-    fila.dequeue();
+    queue.enqueue(100);
+    queue.enqueue(75);
+    queue.enqueue(50);
+    queue.enqueue(25);
+    queue.enqueue(5);
+    expect(queue.size()).toBe(5);
+    queue.clear();
+    expect(queue.size()).toBe(0);
+    queue.enqueue(0);
+    queue.dequeue();
     expect(() => {
-        fila.dequeue();
+        queue.dequeue();
     }).toThrowError("The queue is empty");
 });
 
 test("Queue test example", () => {
-    expect(fila.size()).toBe(0);
-    fila.enqueue("A");
-    expect(fila.size()).toBe(1);
-    expect(fila.front()).toBe("A");
-    fila.enqueue("B");
-    expect(fila.front()).toBe("A");
-    expect(fila.size()).toBe(2);
-    fila.enqueue("C");
-    fila.enqueue("D");
-    fila.enqueue("E");
-    expect(fila.dequeue()).toBe("A");
-    expect(fila.dequeue()).toBe("B");
-    expect(fila.dequeue()).toBe("C");
-    expect(fila.dequeue()).toBe("D");
-    expect(fila.dequeue()).toBe("E");
+    expect(queue.size()).toBe(0);
+    queue.enqueue("A");
+    expect(queue.size()).toBe(1);
+    expect(queue.front()).toBe("A");
+    queue.enqueue("B");
+    expect(queue.front()).toBe("A");
+    expect(queue.size()).toBe(2);
+    queue.enqueue("C");
+    queue.enqueue("D");
+    queue.enqueue("E");
+    expect(queue.dequeue()).toBe("A");
+    expect(queue.dequeue()).toBe("B");
+    expect(queue.dequeue()).toBe("C");
+    expect(queue.dequeue()).toBe("D");
+    expect(queue.dequeue()).toBe("E");
     expect(() => {
-      fila.dequeue();
+      queue.dequeue();
     }).toThrowError("The queue is empty");
-    expect(fila.size()).toBe(0);
+    expect(queue.size()).toBe(0);
   });
   

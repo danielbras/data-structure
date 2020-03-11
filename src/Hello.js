@@ -1,6 +1,6 @@
 export default class Hello {
-  sum(x, y) {
-    return x + y;
+  sum(value1, value2) {
+    return value1 + value2;
   }
   sayHello() {
     return "hello";

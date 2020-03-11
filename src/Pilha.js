@@ -2,7 +2,7 @@
  * Implementação de uma pilha
  * @author {https://github.com/danielbras}
  */
-export default class Pilha {
+export default class Stack {
   /**
    * Construtor da classe
    * @param {number} [size = 5]  = Tamanho da pilha. Caso não informado a Pilha terá tamanho 5.

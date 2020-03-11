@@ -1,11 +1,11 @@
-import Fraction from "../src/Lista_1/Questao1";
+import Fracao from "../src/Lista_1/Questao1";
 
 let frac1;
 let frac2;
 
 beforeEach(() => {
-  frac1 = new Fraction(1, 2);
-  frac2 = new Fraction(2, 2);
+  frac1 = new Fracao(1, 2);
+  frac2 = new Fracao(2, 2);
 });
 
 test("Fraction division", () => {
@@ -13,12 +13,12 @@ test("Fraction division", () => {
 });
 
 test("Fraction multiplication", () => {
-  expect(frac1.multi(frac2).toString()).toBe("2/4");
+  expect(frac1.multiplicacao(frac2).toString()).toBe("2/4");
 });
 
 test("Division for zero", () => {
   expect(() => {
-    let f = new Fracao(4, 0);
-    frac.divisao(f);
-  }).toThrowError("The denominator cannot be zero");
+    let fracao = new Fracao(4, 0);
+    frac1.divisao(fracao);
+  }).toThrowError("O denominador não pode ser zero");
 });

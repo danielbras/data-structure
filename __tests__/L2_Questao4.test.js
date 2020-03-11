@@ -1,25 +1,25 @@
-import Lista from "../src/Lista";
-import inverterOrdem from "../src/Lista_2/Questao4";
+import List from "../src/Lista";
+import inverterOrder from "../src/Lista_2/Questao4";
 
-let lista;
+let list;
 
-beforeEach(() => lista = new Lista());
+beforeEach(() => list = new List());
 
 test("Inverts the order of the list elements", () => {
     expect(() => {
-        inverterOrdem(lista);
+        inverterOrder(list);
     }).toThrowError("List is empty");
-    lista.append(1);
-    expect(inverterOrdem(lista).toString()).toBe("1");
-    lista.append(2);
-    lista.append(3);
-    lista.append(4);
-    lista.append(5);
-    expect(inverterOrdem(lista).toString()).toBe("5->4->3->2->1");
-    lista.add(10);
-    lista.add(20);
-    lista.add(30);
-    lista.add(40);
-    lista.add(50);
-    expect(inverterOrdem(lista).toString()).toBe("1->2->3->4->5->10->20->30->40->50");
+    list.append(1);
+    expect(inverterOrder(list).toString()).toBe("1");
+    list.append(2);
+    list.append(3);
+    list.append(4);
+    list.append(5);
+    expect(inverterOrder(list).toString()).toBe("5->4->3->2->1");
+    list.add(10);
+    list.add(20);
+    list.add(30);
+    list.add(40);
+    list.add(50);
+    expect(inverterOrder(list).toString()).toBe("1->2->3->4->5->10->20->30->40->50");
 });

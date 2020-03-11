@@ -1,41 +1,41 @@
-import Pilha from "../src/Lista_2/Questao1";
+import Stack from "../src/Lista_2/Questao1";
 
-let pilha;
+let stack;
 
-beforeEach(() => pilha = new Pilha());
+beforeEach(() => stack = new Stack());
 
 test("Last In First Out - basic operations", () => {
-  pilha.push(69);
-  pilha.push(15);
-  pilha.push(25);
-  pilha.push(10);
-  pilha.push(90);
-  expect(pilha.pop()).toBe(90);
-  expect(pilha.size()).toBe(4);
-  expect(pilha.peek()).toBe(10);
+  stack.push(69);
+  stack.push(15);
+  stack.push(25);
+  stack.push(10);
+  stack.push(90);
+  expect(stack.pop()).toBe(90);
+  expect(stack.size()).toBe(4);
+  expect(stack.peek()).toBe(10);
 });
 
 test("Underflow", () => {
   expect(() => {
-    pilha.pop();
+    stack.pop();
   }).toThrowError("Underflow");
 });
 
 test("Peek", () => {
-  pilha.push(0);
-  pilha.push(1);
-  pilha.push(2);
-  expect(pilha.peek()).toBe(2);
+  stack.push(0);
+  stack.push(1);
+  stack.push(2);
+  expect(stack.peek()).toBe(2);
 });
 
 test("Clear test", () => {
-  pilha.push(1);
-  pilha.push(2);
-  pilha.push(3);
-  pilha.push(4);
-  pilha.push(5);
-  pilha.push(6);
-  expect(pilha.size()).toBe(6);
-  pilha.clear();
-  expect(pilha.size()).toBe(0);
+  stack.push(1);
+  stack.push(2);
+  stack.push(3);
+  stack.push(4);
+  stack.push(5);
+  stack.push(6);
+  expect(stack.size()).toBe(6);
+  stack.clear();
+  expect(stack.size()).toBe(0);
 })

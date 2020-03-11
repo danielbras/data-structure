@@ -1,21 +1,21 @@
-import Pilha from "../Pilha";
+import Stack from "../Pilha";
 
-export default function trocaTopoBase(pilha) {
-	let aux = new Pilha(pilha.maxSize);
-	let final = new Pilha(pilha.maxSize);
+export default function reverseTopBase(stack) {
+	let auxStack = new Stack(stack.maxSize);
+	let finalStack = new Stack(stack.maxSize);
 
-	if (pilha.size() <= 1) {
-		return pilha;
+	if (stack.size() <= 1) {
+		return stack;
 	} else {
-		final.push(pilha.pop());
-		while (pilha.size() > 1) {
-			aux.push(pilha.pop());
+		finalStack.push(stack.pop());
+		while (stack.size() > 1) {
+			auxStack.push(stack.pop());
 		}
-		while (aux.size() > 0) {
-			final.push(aux.pop());
+		while (auxStack.size() > 0) {
+			finalStack.push(auxStackx.pop());
 		}
-		final.push(pilha.pop());
+		finalStack.push(stack.pop());
 	}
 
-	return final;
+	return finalStack;
 }

@@ -1,28 +1,28 @@
-import Lista from "../Lista";
+import List from "../Lista";
 
-export default class Pilha {
+export default class Stack {
     constructor() { 
-        this.list = new Lista();
+        this.list = new List();
     }
 
-    push(dado) {
-        this.list.append(dado);
+    push(data) {
+        this.list.append(data);
     }
 
     pop() {
         if (this.isEmpty()) {
             throw new Error("Underflow");
         }
-        let dado = this.lastData();
+        let data = this.getLastElement();
         this.list.removeEnd();
-        return dado;
+        return data;
     }
 
     peek() {
         if (this.isEmpty()) {
             throw new Error("Stack is empty");
         }
-        return this.lastData();
+        return this.getLastElement();
     }
 
     size() {
@@ -38,18 +38,18 @@ export default class Pilha {
     }
 
     clear() {
-        this.list = new Lista();
+        this.list = new List();
     }
 
     // Função extra para reutilizar código
-    lastData() {
-        let anterior = this.list.head;
-        let atual = this.list.head.proximo;
+    getLastElement() {
+        let previous = this.list.head;
+        let current = this.list.head.next;
 
-        while (atual !== null) {
-            anterior = atual;
-            atual = atual.proximo;
+        while (current !== null) {
+            previous = current;
+            current = current.next;
         }
-        return anterior.dado;
+        return previous.data;
     }
 }

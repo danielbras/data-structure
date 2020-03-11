@@ -1,12 +1,9 @@
-export default class Fila {
-  /**
-   *
-   * @param {number} size
-   */
+export default class Queue {
+ 
   constructor(size = 10) {
     this.data = [];
-    this.fim = 0;
-    this.inicio = 0;
+    this.end = 0;
+    this.start = 0;
     this.maxSize = size;
   }
 
@@ -14,7 +11,7 @@ export default class Fila {
     if (this.isFull()) {
       throw new Error("Queue is full");
     } else {
-      this.data[this.fim++] = newData;
+      this.data[this.end++] = newData;
     }
   }
 
@@ -22,7 +19,7 @@ export default class Fila {
     if (this.isEmpty()) {
       throw new Error("Queue is empty");
     } else {
-      return this.data[this.inicio++];
+      return this.data[this.start++];
     }
   }
 
@@ -30,32 +27,32 @@ export default class Fila {
     if (this.isEmpty()) {
       throw new Error("Queue is empty");
     } else {
-      return this.data[this.inicio];
+      return this.data[this.start];
     }
   }
 
   clear() {
-    this.inicio = this.fim = 0;
+    this.start = this.end = 0;
   }
 
   toString() {
-    let result = "[";
-		for (let i = this.inicio; i < this.fim; i++) {
-			result += `${this.data[i]}`;
+    let string = "[";
+		for (let i = this.start; i < this.end; i++) {
+			string += `${this.data[i]}`;
 		}
-		result += "]";
-		return result;
+		string += "]";
+		return string;
   }
 
   size() {
-    return this.fim - this.inicio;
+    return this.end - this.start;
   }
 
   isEmpty() {
-    return this.inicio === this.fim;
+    return this.start === this.end;
   }
 
   isFull() {
-    return this.fim - this.inicio === this.maxSize;
+    return this.end - this.start === this.maxSize;
   }
 }
