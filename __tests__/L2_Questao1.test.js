@@ -15,13 +15,13 @@ test("Last In First Out - basic operations", () => {
   expect(stack.peek()).toBe(10);
 });
 
-test("Underflow", () => {
+test("Underflow test", () => {
   expect(() => {
     stack.pop();
   }).toThrowError("Underflow");
 });
 
-test("Peek", () => {
+test("Peek test", () => {
   stack.push(0);
   stack.push(1);
   stack.push(2);

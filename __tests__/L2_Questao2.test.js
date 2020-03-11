@@ -55,4 +55,3 @@ test("Queue test example", () => {
     }).toThrowError("The queue is empty");
     expect(queue.size()).toBe(0);
   });
-  

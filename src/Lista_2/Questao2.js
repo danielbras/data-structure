@@ -30,7 +30,7 @@ export default class Queue {
     }
 
     clear() {
-        this.list = new Lista();
+        this.list = new List();
     }
 
     toString() {

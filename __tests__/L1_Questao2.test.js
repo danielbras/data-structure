@@ -1,18 +1,18 @@
 import Pilha from "../src/Pilha";
 import reverseTopBase from "../src/Lista_1/Questao2";
 
-let pilha;
+let stack;
 
 beforeEach(() => {
-	pilha = new Pilha(5);
+	stack = new Pilha(5);
 });
 
-test("Teste de troca", () => {
-	pilha.push(1);
-	pilha.push(2);
-	pilha.push(3);
-	pilha.push(4);
-	pilha.push(5);
-	expect(pilha.toString()).toBe("[ 1  2  3  4  5 ]");
-	expect(reverseTopBase(pilha).toString()).toBe("[ 5  2  3  4  1 ]");
+test("Invert of stack top with the base", () => {
+	stack.push(1);
+	stack.push(2);
+	stack.push(3);
+	stack.push(4);
+	stack.push(5);
+	expect(stack.print()).toBe("[ 1  2  3  4  5 ]");
+	expect(reverseTopBase(stack).print()).toBe("[ 5  2  3  4  1 ]");
 });

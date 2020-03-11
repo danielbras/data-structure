@@ -10,11 +10,11 @@ export default function inverterOrder(list) {
 
     while (!list.isEmpty()) {
         previous = list.head;
-        current = list.head.proximo;
+        current = list.head.next;
 
         while (current !== null) {
             previous = current;
-            current = current.proximo;
+            current = current.next;
         }
         auxList.append(previous.data);
         list.removeEnd();
@@ -23,11 +23,11 @@ export default function inverterOrder(list) {
     // Preencher list principal com os elementos em outra ordem
     while (!auxList.isEmpty()) {
         previous = auxList.head;
-        current = auxList.head.proximo;
+        current = auxList.head.next;
 
         while (current !== null) {
             previous = current;
-            current = current.proximo;
+            current = current.next;
         }
         list.add(previous.data);
         auxList.removeEnd();

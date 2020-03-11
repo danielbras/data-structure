@@ -1,16 +1,16 @@
 import Pilha from '../Pilha'
 
-export default function verificaExpressao(texto) {
-	let aux = new Pilha(20);
+export default function verifyExpression(string) {
+	let auxStack = new Pilha(20);
 
-	for (let i = 0; i < texto.length; i++) {
-		if (texto[i] === '[' || texto[i] === '(') {
-			aux.push(texto[i]);
-		} else if (texto[i] === ']' || texto[i] === ')') {
-			let r = aux.pop();
-			if ((r === '(' && texto[i] !== ')') || (r === '[' && texto[i] !== ']')) return false;
+	for (let i = 0; i < string.length; i++) {
+		if (string[i] === '[' || string[i] === '(') {
+			auxStack.push(string[i]);
+		} else if (string[i] === ']' || string[i] === ')') {
+			let getElement = auxStack.pop();
+			if ((getElement === '(' && string[i] !== ')') || (getElement === '[' && string[i] !== ']')) return false;
 		}
 	}
 
-	return aux.isEmpty();
+	return auxStack.isEmpty();
 }

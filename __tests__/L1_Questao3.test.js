@@ -6,7 +6,7 @@ beforeEach(() => {
   pilha = new Pilha2Filas(5);
 });
 
-test("Estouro de pilha", () => {
+test("Stack is full", () => {
   pilha.push(1);
   pilha.push(2);
   pilha.push(3);
@@ -17,13 +17,13 @@ test("Estouro de pilha", () => {
   }).toThrowError("Stack overflow");
 });
 
-test("", () => {
+test("Stack is empty", () => {
   expect(() => {
     pilha.pop();
   }).toThrowError("Stack underflow");
 });
 
-test("operation of stack with two queues", () => {
+test("Operation of stack with two queues", () => {
   pilha.push(1);
   expect(pilha.peek()).toBe(1);
   pilha.push(2);

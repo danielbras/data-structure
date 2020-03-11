@@ -1,6 +1,6 @@
-import verificaExpressao from "../src/Lista_1/Questao8";
+import verifyExpression from "../src/Lista_1/Questao8";
 
-test("Teste de expressao", () => {
-	expect(verificaExpressao("[ ( ) [ ( ) ] ] ( )")).toBe(true);
-	expect(verificaExpressao("( ( ) ]")).toBe(false);
+test("", () => {
+	expect(verifyExpression("[()[()]]()")).toBe(true);
+	expect(verifyExpression("( ( ) ]")).toBe(false);
 });

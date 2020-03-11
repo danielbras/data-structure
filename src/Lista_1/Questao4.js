@@ -2,45 +2,45 @@ import Pilha from '../Pilha'
 
 export default class Queue2Stack {
 	constructor(maxsize) {
-		this.p1 = new Pilha(maxsize);
-		this.p2 = new Pilha(maxsize);
+		this.firstStack = new Pilha(maxsize);
+		this.auxStack = new Pilha(maxsize);
 	}
 
 	enqueue(dado) {
 		if (this.isFull()) {
 			throw new Error("Overflow");
 		} else {
-			while (this.p1.size() > 0) {
-				this.p2.push(this.p1.pop());
+			while (this.firstStack.size() > 0) {
+				this.auxStack.push(this.firstStack.pop());
 			}
-			this.p1.push(dado);
-			while (this.p2.size() > 0) {
-				this.p1.push(this.p2.pop());
+			this.firstStack.push(dado);
+			while (this.auxStack.size() > 0) {
+				this.firstStack.push(this.auxStack.pop());
 			}
 		}
 	}
 
 	dequeue() {
-		return this.p1.pop();
+		return this.firstStack.pop();
 	}
 
 	isFull() {
-		return this.p1.isFull();
+		return this.firstStack.isFull();
 	}
 
 	isEmpty() {
-		return this.p1.isEmpty();
+		return this.firstStack.isEmpty();
 	}
 
 	size() {
-		return this.p1.size();
+		return this.firstStack.size();
 	}
 
 	front() {
-		return this.p1.top();
+		return this.firstStack.top();
 	}
 
 	clear() {
-		return this.p1.clear();
+		return this.firstStack.clear();
 	}
 }

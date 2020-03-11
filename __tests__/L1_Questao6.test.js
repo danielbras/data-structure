@@ -1,23 +1,23 @@
 import Deque from "../src/Lista_1/Questao6";
 
-let d;
+let deque;
 
 beforeEach(() => {
-	d = new Deque(5);
+	deque = new Deque(5);
 });
 
-test("Testes deque", () => {
-	d.insereInicio('A');
-	d.insereInicio('B');
-	d.insereInicio('C');
-	d.insereFim('D');
-	expect(d.removeInicio()).toBe('C');
-	expect(d.removeInicio()).toBe('B');
-	expect(d.removeFim()).toBe('D');
-	expect(d.removeFim()).toBe('A');
+test("Testing the operations of deque", () => {
+	deque.insereInicio('A');
+	deque.insereInicio('B');
+	deque.insereInicio('C');
+	deque.insereFim('D');
+	expect(deque.removeInicio()).toBe('C');
+	expect(deque.removeInicio()).toBe('B');
+	expect(deque.removeFim()).toBe('D');
+	expect(deque.removeFim()).toBe('A');
 	expect(() => {
-		d.removeFim();
+		deque.removeFim();
 	}).toThrowError();
-	d.insereInicio('F');
-	expect(d.removeFim()).toBe('F');
+	deque.insereInicio('F');
+	expect(deque.removeFim()).toBe('F');
 });

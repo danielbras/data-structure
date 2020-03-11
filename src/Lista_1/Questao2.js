@@ -12,7 +12,7 @@ export default function reverseTopBase(stack) {
 			auxStack.push(stack.pop());
 		}
 		while (auxStack.size() > 0) {
-			finalStack.push(auxStackx.pop());
+			finalStack.push(auxStack.pop());
 		}
 		finalStack.push(stack.pop());
 	}

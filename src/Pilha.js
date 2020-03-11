@@ -92,6 +92,7 @@ export default class Stack {
     for (let i = 0; i <= this.top; i++) {
       result += ` ${this.data[i]} `;
     }
-    return (result += "]");
+  
+    return result += "]";
   }
 }

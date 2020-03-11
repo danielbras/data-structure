@@ -1,91 +1,90 @@
 import Queue2Stack from "../src/Lista_1/Questao4";
 
-
-let f;
+let queue;
 
 beforeEach(() => {
-	f = new Queue2Stack(5);
+	queue = new Queue2Stack(5);
 });
 
 test("Instanciacao", () => {
-	expect(f.size()).toBe(0);
+	expect(queue.size()).toBe(0);
 });
 
 test("Adicionar um elemento", () => {
-	f.enqueue(5);
-	expect(f.size()).toBe(1);
-	expect(f.front()).toBe(5);
+	queue.enqueue(5);
+	expect(queue.size()).toBe(1);
+	expect(queue.front()).toBe(5);
 });
 
 test("Teste de overflow", () => {
-	f.enqueue(5);
-	f.enqueue(5);
-	f.enqueue(5);
-	f.enqueue(5);
-	f.enqueue(5);
+	queue.enqueue(5);
+	queue.enqueue(5);
+	queue.enqueue(5);
+	queue.enqueue(5);
+	queue.enqueue(5);
 	expect(() => {
-		f.enqueue(5);
+		queue.enqueue(5);
 	}).toThrowError();
 });
 
 test("Teste de underflow", () => {
 	expect(() => {
-		f.dequeue();
+		queue.dequeue();
 	}).toThrowError()
 })
 
 test("Teste de comportamento", () => {
-	f.enqueue(1);
-	f.enqueue(2);
-	f.enqueue(3);
-	f.enqueue(4);
-	f.enqueue(5);
-	expect(f.dequeue()).toBe(1);
+	queue.enqueue(1);
+	queue.enqueue(2);
+	queue.enqueue(3);
+	queue.enqueue(4);
+	queue.enqueue(5);
+	expect(queue.dequeue()).toBe(1);
 });
 
 test("Teste de clear", () => {
-	f.enqueue(1);
-	f.enqueue(2);
-	f.enqueue(3);
-	f.enqueue(4);
-	f.enqueue(5);
-	f.clear();
+	queue.enqueue(1);
+	queue.enqueue(2);
+	queue.enqueue(3);
+	queue.enqueue(4);
+	queue.enqueue(5);
+	queue.clear();
 	expect(() => {
-		f.dequeue();
+		queue.dequeue();
 	}).toThrowError()
 });
 
 test("Teste de size após o clear", () => {
-	f.enqueue(1);
-	f.enqueue(2);
-	f.enqueue(3);
-	f.enqueue(4);
-	f.enqueue(5);
-	f.clear();
-	expect(f.size()).toBe(0);
+	queue.enqueue(1);
+	queue.enqueue(2);
+	queue.enqueue(3);
+	queue.enqueue(4);
+	queue.enqueue(5);
+	queue.clear();
+	expect(queue.size()).toBe(0);
 });
 
 test("fila aula", () => {
-	expect(f.size()).toBe(0);
-	f.enqueue("A");
-	expect(f.size()).toBe(1);
-	expect(f.front()).toBe("A");
-	f.enqueue("B");
-	expect(f.front()).toBe("A");
-	expect(f.size()).toBe(2);
-	f.enqueue("C");
-	f.enqueue("D");
-	f.enqueue("E");
+	expect(queue.size()).toBe(0);
+	queue.enqueue("A");
+	expect(queue.size()).toBe(1);
+	expect(queue.front()).toBe("A");
+	queue.enqueue("B");
+	expect(queue.front()).toBe("A");
+	expect(queue.size()).toBe(2);
+	queue.enqueue("C");
+	queue.enqueue("D");
+	queue.enqueue("E");
 	expect(() => {
-		f.enqueue("F");
+		queue.enqueue("F");
 	}).toThrowError();
-	expect(f.dequeue()).toBe("A");
-	expect(f.dequeue()).toBe("B");
-	expect(f.dequeue()).toBe("C");
-	expect(f.dequeue()).toBe("D");
-	expect(f.dequeue()).toBe("E");
+	expect(queue.dequeue()).toBe("A");
+	expect(queue.dequeue()).toBe("B");
+	expect(queue.dequeue()).toBe("C");
+	expect(queue.dequeue()).toBe("D");
+	expect(queue.dequeue()).toBe("E");
 	expect(() => {
-		f.dequeue();
+		queue.dequeue();
 	}).toThrowError();
-	expect(f.size()).toBe(0);
+	expect(queue.size()).toBe(0);
 });

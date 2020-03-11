@@ -1,5 +1,4 @@
 export default class Queue {
- 
   constructor(size = 10) {
     this.data = [];
     this.end = 0;
@@ -37,11 +36,11 @@ export default class Queue {
 
   toString() {
     let string = "[";
-		for (let i = this.start; i < this.end; i++) {
-			string += `${this.data[i]}`;
-		}
-		string += "]";
-		return string;
+    for (let i = this.start; i < this.end; i++) {
+      string += `${this.data[i]}`;
+    }
+    string += "]";
+    return string;
   }
 
   size() {
