@@ -1,3 +1,6 @@
+# Arquivo de teste da questão 3
+
+```
 import Pilha2Filas from "../src/Lista_1/Questao3";
 
 let pilha;
@@ -34,3 +37,4 @@ test("Operation of stack with two queues", () => {
   pilha.push(5);
   expect(pilha.peek()).toBe(5);
 });
+```

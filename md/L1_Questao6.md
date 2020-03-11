@@ -1,3 +1,6 @@
+# Arquivo de teste da questão 6
+
+```
 import Deque from "../src/Lista_1/Questao6";
 
 let deque;
@@ -21,3 +24,4 @@ test("Testing the operations of deque", () => {
 	deque.insereInicio('F');
 	expect(deque.removeFim()).toBe('F');
 });
+```

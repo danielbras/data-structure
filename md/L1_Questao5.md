@@ -1,3 +1,6 @@
+# Arquivo de teste da questão 5
+
+```
 import DecToBin from "../src/Lista_1/Questao5";
 
 test("Decimal to binary converter", () => {
@@ -6,3 +9,4 @@ test("Decimal to binary converter", () => {
 	expect(DecToBin(2)).toBe("10");
 	expect(DecToBin(1)).toBe("1");
 });
+```

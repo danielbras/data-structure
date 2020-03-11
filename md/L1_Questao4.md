@@ -1,3 +1,6 @@
+# Arquivo de teste da questão 4
+
+```
 import Queue2Stack from "../src/Lista_1/Questao4";
 
 let queue;
@@ -88,3 +91,4 @@ test("fila aula", () => {
 	}).toThrowError();
 	expect(queue.size()).toBe(0);
 });
+```
