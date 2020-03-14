@@ -1,6 +1,6 @@
 import List from "../Lista";
 
-export default class Substrings{
+export default class SubstringList{
     constructor() {
         this.list = new List();
     }

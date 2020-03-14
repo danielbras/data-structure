@@ -1,4 +1,4 @@
-class ArrayList{
+export default class ArrayList{
     constructor() {
         this.arrayList = [];
     }
@@ -81,5 +81,3 @@ class ArrayList{
     }
 
 }
-
-export default ArrayList;
