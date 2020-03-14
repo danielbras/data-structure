@@ -6,11 +6,7 @@ let list;
 beforeEach(() => list = new List());
 
 test("Inverts the order of the list elements", () => {
-    expect(() => {
-        inverterOrder(list);
-    }).toThrowError("List is empty");
     list.append(1);
-    expect(inverterOrder(list).toString()).toBe("1");
     list.append(2);
     list.append(3);
     list.append(4);

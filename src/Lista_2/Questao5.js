@@ -2,9 +2,11 @@ import List from "../Lista";
 
 export default function shuffleOrder(list) {
     let auxList = new List();
+    let original = new List();
 
     while (!list.isEmpty()) {
         auxList.append(getLastElement(list));
+        original.append(getLastElement(list));
         list.removeEnd();
     }
     while (!auxList.isEmpty()) {

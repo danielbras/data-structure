@@ -1,10 +1,6 @@
 import List from "../Lista";
 
 export default function inverterOrder(list) {
-    if(list.isEmpty()){
-        throw new Error("List is empty");
-    }
-    
     let auxList = new List();
     let previous, current;
 
