@@ -13,6 +13,6 @@ test("return characters from posA to posB", () => {
     list.add("l");
     list.add("o");
     list.add("s");
-    expect(list.substring(6,11)).toBe("c->a->r->l->o->s");
+    expect(list.substring(0,5)).toBe("s->o->l->r->a->c");
 
 })

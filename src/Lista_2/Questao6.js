@@ -1,7 +1,6 @@
 import List from "../Lista";
-import Pilha from "../Pilha";
 
-class listSubstring {
+export default class Substrings{
     constructor() {
         this.list = new List();
     }
@@ -24,20 +23,22 @@ class listSubstring {
     }
     add(string) {
         for (let i = 0; i < string.length; i++) {
-            this.list.append(string[i]);
+            this.list.add(string[i]);
         }
     }
     append(string) {
-        this.add(string);
+        for (let i = 0; i < string.length; i++) {
+            this.list.append(string[i]);
+        }
     }
 
-    removeBeginning() {
-        this.list.removeBeginning();
-    }
+    // removeBeginning() {
+    //     this.list.removeBeginning();
+    // }
 
-    removeEnd() {
-        this.list.removeEnd();
-    }
+    // removeEnd() {
+    //     this.list.removeEnd();
+    // }
 
     toString() {
         this.list.toString();
@@ -47,9 +48,7 @@ class listSubstring {
         this.list.size();
     }
 
-    search(data) {
-        this.list.search(data);
-    }
+    // search(data) {
+    //     this.list.search(data);
+    // }
 }
-
-export default listSubstring;
