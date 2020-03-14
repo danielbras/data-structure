@@ -1,25 +1,11 @@
 import ListaDuplamenteLigada from "../ListaDuplamenteLigada";
+import returnCustom from "../ReturnCustom"
 
-export default class DualList {
-    constructor(simpleList) {
-        this.duallist = new ListaDuplamenteLigada();
-        this.list = simpleList;
+export default function copyValues(simpleList) {
+    let result = new ListaDuplamenteLigada();
+    while (!simpleList.isEmpty()) { 
+        result.add(returnCustom(simpleList))
+        simpleList.removeEnd();
     }
-    
-    copyValues() {
-        let previous;
-        let current;
-
-        while (!this.list.isEmpty()) {
-            previous = this.list.head;
-            current = this.list.head.next;
-            while (current !== null) {
-                previous = current;
-                current = current.next;
-            }
-            this.duallist.add(previous.data);
-            this.list.removeEnd();
-        }
-        return this.duallist;
-    }
+    return result;
 }

@@ -1,33 +1,12 @@
 import List from "../Lista";
+import returnCustom from "../ReturnCustom";
 
 export default function inverterOrder(list) {
-    let auxList = new List();
-    let previous, current;
-
-    while (!list.isEmpty()) {
-        previous = list.head;
-        current = list.head.next;
-
-        while (current !== null) {
-            previous = current;
-            current = current.next;
-        }
-        auxList.append(previous.data);
+    let result = new List(); 
+    
+    while(!list.isEmpty()){
+        result.append(returnCustom(list));
         list.removeEnd();
     }
-
-    // Preencher list principal com os elementos em outra ordem
-    while (!auxList.isEmpty()) {
-        previous = auxList.head;
-        current = auxList.head.next;
-
-        while (current !== null) {
-            previous = current;
-            current = current.next;
-        }
-        list.add(previous.data);
-        auxList.removeEnd();
-    }
-    
-    return list;
-}
+    return result;
+}  
