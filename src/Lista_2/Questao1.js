@@ -1,5 +1,5 @@
 import List from "../Lista";
-import returnCustom from "../ReturnCustom"
+import customReturnEnd from "../CustomReturnEnd";
 
 export default class Stack {
     constructor() { 
@@ -14,7 +14,7 @@ export default class Stack {
         if (this.isEmpty()) {
             throw new Error("Underflow");
         }
-        let data = returnCustom(this.list);
+        let data = customReturnEnd(this.list);
         this.list.removeEnd();
         return data;
     }
@@ -23,7 +23,7 @@ export default class Stack {
         if (this.isEmpty()) {
             throw new Error("Stack is empty");
         }
-        return returnCustom(this.list);
+        return customReturnEnd(this.list);
     }
 
     size() {

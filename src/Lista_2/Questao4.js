@@ -1,11 +1,11 @@
 import List from "../Lista";
-import returnCustom from "../ReturnCustom";
+import customReturnEnd from "../CustomReturnEnd";
 
 export default function inverterOrder(list) {
     let result = new List(); 
     
     while(!list.isEmpty()){
-        result.append(returnCustom(list));
+        result.append(customReturnEnd(list));
         list.removeEnd();
     }
     return result;

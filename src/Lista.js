@@ -68,10 +68,18 @@ class List {
       string += current.data + (current.next ? "->" : "");
       current = current.next;
     }
-
     return string;
   }
 
+  objToString() {
+    let aux = this.head.next;
+    let string = '';
+    while (aux !== null) {
+        string += `\n{ nome: ${aux.data.name}, idade: ${aux.data.age} }`;
+        aux = aux.next;
+    }
+    return string;
+  }
   size() {
     let count = 0;
     let current = this.head.next;
