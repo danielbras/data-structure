@@ -12,7 +12,7 @@ test("Sort people by age", () => {
     list.addPeople("Taniro", 30);
     list.addPeople("Alyson", 21);
     // console.log(list.toString());
-    expect(list.orderByAge().toString()).toBe("Fredy 2->Daniel 19->Bob 20->Alyson 21->Taniro 30->Carlos 50");
+    expect(list.sortByAge().toString()).toBe("Fredy 2->Daniel 19->Bob 20->Alyson 21->Taniro 30->Carlos 50");
 });
 
 test("Sort people by name", () => {
