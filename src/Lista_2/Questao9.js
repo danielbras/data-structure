@@ -1,12 +1,16 @@
 import List from "../Lista";
+import customReturnEnd from "../CustomReturnEnd";
 
 export default class People {
     constructor() {
+        this.list = new List();
         this.array = [];
     }
 
-    addPeople(name, age) {
-        this.array.push({name, age})
+    addPeople(name, age) {;
+        this.list.append({name, age});
+        this.array.push(customReturnEnd(this.list));
+        this.list.removeEnd();
     }
 
     /**
@@ -20,12 +24,12 @@ export default class People {
         this.array.sort((obj1, obj2) => {
             return (obj1.age > obj2.age) ? 1 : ((obj2.age > obj1.age)) ? -1 : 0;
         });
-        let result = new List();
+        let newList = new List();
         for (let i = 0; i < this.array.length; i++) {
-            result.append(`${this.array[i].name} ${this.array[i].age}`);
+            newList.append(`${this.array[i].name} ${this.array[i].age}`);
         }
-        // console.log(result.toString());
-        return result;
+        // console.log(newList.toString());
+        return newList;
     }
 
     /**
@@ -36,14 +40,15 @@ export default class People {
         this.array.sort((obj1, obj2) => {
             return (obj1.name > obj2.name) ? 1 : ((obj2.name > obj1.name)) ? -1 : 0;
         });
-        let result = new List();
+        let newList = new List();
         for (let i = 0; i < this.array.length; i++) {
-            result.append(`${this.array[i].name} ${this.array[i].age}`);
+            newList.append(`${this.array[i].name} ${this.array[i].age}`);
         }
-        // console.log(result.toString());
-        return result;
+        // console.log(newList.toString());
+        return newList;
     }
 
+    // Sobrescrevi o toString da lista ligada.
     toString() {
         let string = "";
         for (let i = 0; i < this.array.length; i++) {

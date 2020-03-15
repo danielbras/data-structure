@@ -26,5 +26,4 @@ test("Sort people by name", () => {
     list.addPeople("Alyson", 21);
     // console.log(list.toString());
     expect(list.sortByName().toString()).toBe("Alyson 21->Bob 20->Carlos 50->Chan 100->Daniel 19->Fredy 2->Lee 90->Taniro 30");
-
 });
