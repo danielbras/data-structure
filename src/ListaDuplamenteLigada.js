@@ -92,7 +92,7 @@ class ListaDuplamenteLigada {
 	remove(data) {
 		if (!this.isEmpty()) {
 			let current = this.head;
-			let next = this.head.next;
+			let nxt = this.head.next;
 			let last = this.tail;
 
 			if (current.data === data) {
@@ -100,16 +100,16 @@ class ListaDuplamenteLigada {
 			} else if (last.data === data) {
 				return this.removeEnd();
 			} else {
-				while (next != null) {
-					if (next.data === data) {
-						aux = next.next;
-						current.next = next.next;
+				while (nxt != null) {
+					if (nxt.data === data) {
+						let aux = nxt.next;
+						current.next = nxt.next;
 						aux.previous = current;
 						return true;
 					}
 					//iteração
-					current = next;
-					next = next.next;
+					current = nxt;
+					nxt = nxt.next;
 				}
 			}
 		}
