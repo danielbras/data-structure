@@ -1,3 +1,4 @@
+```
 import Stack from "../src/Lista_2/Questao1";
 
 let stack;
@@ -39,3 +40,4 @@ test("Clear test", () => {
   stack.clear();
   expect(stack.size()).toBe(0);
 })
+```
