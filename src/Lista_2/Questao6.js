@@ -1,54 +1,54 @@
-import List from "../Lista";
+import List from '../Lista';
 
-export default class SubstringList{
-    constructor() {
-        this.list = new List();
-    }
+export default class SubstringList {
+  constructor() {
+    this.list = new List();
+  }
 
-    substring(posA, posB) {
-        let aux = this.list.toString();
-        let result = new List();
-        let count = 0;
+  substring(posA, posB) {
+    let aux = this.list.toString();
+    let result = new List();
+    let count = 0;
 
-        for (let i = 0; i < aux.length; i++) {
-            if(aux[i] !== "-" && aux[i] !== ">"){
-                if (count >= posA && count <= posB) {
-                    result.append(aux[i]);
-                }
-                count++;
-            }
+    for (let i = 0; i < aux.length; i++) {
+      if (aux[i] !== '-' && aux[i] !== '>') {
+        if (count >= posA && count <= posB) {
+          result.append(aux[i]);
         }
-        // console.log(result.toString());
-        return result.toString();
+        count++;
+      }
     }
-    add(string) {
-        for (let i = 0; i < string.length; i++) {
-            this.list.add(string[i]);
-        }
+    // console.log(result.toString());
+    return result.toString();
+  }
+  add(string) {
+    for (let i = 0; i < string.length; i++) {
+      this.list.add(string[i]);
     }
-    append(string) {
-        for (let i = 0; i < string.length; i++) {
-            this.list.append(string[i]);
-        }
+  }
+  append(string) {
+    for (let i = 0; i < string.length; i++) {
+      this.list.append(string[i]);
     }
+  }
 
-    // removeBeginning() {
-    //     this.list.removeBeginning();
-    // }
+  // removeBeginning() {
+  //     this.list.removeBeginning();
+  // }
 
-    // removeEnd() {
-    //     this.list.removeEnd();
-    // }
+  // removeEnd() {
+  //     this.list.removeEnd();
+  // }
 
-    toString() {
-        this.list.toString();
-    }
+  toString() {
+    this.list.toString();
+  }
 
-    size() {
-        this.list.size();
-    }
+  size() {
+    this.list.size();
+  }
 
-    // search(data) {
-    //     this.list.search(data);
-    // }
+  // search(data) {
+  //     this.list.search(data);
+  // }
 }
