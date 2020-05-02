@@ -1,49 +1,49 @@
-import Fila from "../Fila";
+import Fila from '../Fila';
 
 export default class Stack2Queue {
-	constructor(maxtam = 5) {
-		this.firstQueue = new Fila(maxtam);
-		this.auxQueue = new Fila(maxtam);
-	}
+  constructor(maxtam = 5) {
+    this.firstQueue = new Fila(maxtam);
+    this.auxQueue = new Fila(maxtam);
+  }
 
-	push(dado) {
-		if (this.isFull()) {
-			throw new Error("Stack overflow");
-		} else {
-			while (this.firstQueue.size() > 0) {
-				this.auxQueue.enqueue(this.firstQueue.dequeue());
-			}
-			this.firstQueue.enqueue(dado);
-			while (this.auxQueue.size() > 0) {
-				this.firstQueue.enqueue(this.auxQueue.dequeue());
-			}
-		}
-  	}
-  
-	pop() {
-		if (this.isEmpty()) {
-			throw new Error("Stack underflow");
-		}
-		return this.firstQueue.dequeue();
-	}
+  push(dado) {
+    if (this.isFull()) {
+      throw new Error('Stack overflow');
+    } else {
+      while (this.firstQueue.size() > 0) {
+        this.auxQueue.enqueue(this.firstQueue.dequeue());
+      }
+      this.firstQueue.enqueue(dado);
+      while (this.auxQueue.size() > 0) {
+        this.firstQueue.enqueue(this.auxQueue.dequeue());
+      }
+    }
+  }
 
-	peek() {
-		return this.firstQueue.front();
-	}
+  pop() {
+    if (this.isEmpty()) {
+      throw new Error('Stack underflow');
+    }
+    return this.firstQueue.dequeue();
+  }
 
-	isEmpty() {
-		return this.firstQueue.isEmpty();
-	}
+  peek() {
+    return this.firstQueue.front();
+  }
 
-	size() {
-		return this.firstQueue.size();
-	}
+  isEmpty() {
+    return this.firstQueue.isEmpty();
+  }
 
-	isFull() {
-		return this.firstQueue.isFull();
-	}
+  size() {
+    return this.firstQueue.size();
+  }
 
-	print() {
-		return this.firstQueue.toString();
-	}
+  isFull() {
+    return this.firstQueue.isFull();
+  }
+
+  print() {
+    return this.firstQueue.toString();
+  }
 }

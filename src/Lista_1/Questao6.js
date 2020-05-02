@@ -1,88 +1,90 @@
-
 export default class Deque {
-	constructor(size) {
-		this.maxsize = size;
-		this.dados = [];
-		this.inicio = -1;
-		this.fim = 0;
-	}
+  constructor(size) {
+    this.maxsize = size;
+    this.dados = [];
+    this.inicio = -1;
+    this.fim = 0;
+  }
 
-	insereInicio(dado) {
-		if (this.isFull()) {
-			throw new Error();
-		} else if (this.isEmpty()) {
-			this.inicio = 0;
-			this.fim = 0;
-		} else if (this.inicio === 0) {
-			this.inicio = this.maxsize - 1;
-		} else {
-			this.inicio--;
-		}
-		this.dados[this.inicio] = dado;
+  insereInicio(dado) {
+    if (this.isFull()) {
+      throw new Error();
+    } else if (this.isEmpty()) {
+      this.inicio = 0;
+      this.fim = 0;
+    } else if (this.inicio === 0) {
+      this.inicio = this.maxsize - 1;
+    } else {
+      this.inicio--;
     }
-    
-	insereFim(dado) {
-		if (this.isFull()) {
-			throw new Error();
-		} else if (this.isEmpty()) {
-			this.inicio = 0;
-			this.fim = 0;
-		} else if (this.fim === this.maxsize - 1) {
-			this.fim = 0;
-		} else {
-			this.fim++;
-		}
-		this.dados[this.fim] = dado;
-	}
+    this.dados[this.inicio] = dado;
+  }
 
-	removeInicio() {
-		if (this.isEmpty()) {
-			throw new Error();
-		}
-		let r = this.dados[this.inicio];
-
-		if (this.inicio === this.fim) {
-			this.clear();
-		} else {
-			if (this.inicio === this.maxsize - 1) {
-				this.inicio = 0
-			} else {
-				this.inicio++;
-			}
-		}
-
-		return r;
+  insereFim(dado) {
+    if (this.isFull()) {
+      throw new Error();
+    } else if (this.isEmpty()) {
+      this.inicio = 0;
+      this.fim = 0;
+    } else if (this.fim === this.maxsize - 1) {
+      this.fim = 0;
+    } else {
+      this.fim++;
     }
-    
-	removeFim() {
-		if (this.isEmpty()) {
-			throw new Error();
-		}
-		let r = this.dados[this.fim];
+    this.dados[this.fim] = dado;
+  }
 
-		if (this.inicio === this.fim) {
-			this.clear();
-		} else {
-			if (this.fim === 0) {
-				this.fim = this.maxsize - 1;
-			} else {
-				this.fim--;
-			}
-		}
+  removeInicio() {
+    if (this.isEmpty()) {
+      throw new Error();
+    }
+    let r = this.dados[this.inicio];
 
-		return r;
-	}
+    if (this.inicio === this.fim) {
+      this.clear();
+    } else {
+      if (this.inicio === this.maxsize - 1) {
+        this.inicio = 0;
+      } else {
+        this.inicio++;
+      }
+    }
 
-	clear() {
-		this.inicio = -1;
-		this.fim = 0;
-	}
+    return r;
+  }
 
-	isEmpty() {
-		return this.inicio === -1;
-	}
+  removeFim() {
+    if (this.isEmpty()) {
+      throw new Error();
+    }
+    let r = this.dados[this.fim];
 
-	isFull() {
-		return (this.inicio === this.fim + 1) || (this.inicio === 0 && this.fim === this.maxsize - 1);
-	}
+    if (this.inicio === this.fim) {
+      this.clear();
+    } else {
+      if (this.fim === 0) {
+        this.fim = this.maxsize - 1;
+      } else {
+        this.fim--;
+      }
+    }
+
+    return r;
+  }
+
+  clear() {
+    this.inicio = -1;
+    this.fim = 0;
+  }
+
+  isEmpty() {
+    return this.inicio === -1;
+  }
+
+  isFull() {
+    return (
+      this.inicio === this.fim + 1 ||
+      (this.inicio === 0 && this.fim === this.maxsize - 1)
+    );
+  }
 }
